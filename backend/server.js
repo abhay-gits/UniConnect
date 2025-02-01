@@ -14,10 +14,6 @@ const PORT = 3000;
 app.use(cors())
 app.use(bodyParser.json());
 
-app.get('/',(req,res)=>{
-  res.send("Hello from server")
-})
-
 /* Routes */
 //User Route
 app.use('/api/confessions', confessions)

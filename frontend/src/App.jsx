@@ -1,7 +1,10 @@
+import { Route, Routes } from 'react-router'
+
 import Confession from './components/Confession'
 import GlobalChat from './components/GlobalChat'
 import Navbar from './components/Navbar'
 import './App.css'
+import Notices from './components/Notices'
 
 function App() {
 
@@ -12,8 +15,11 @@ function App() {
       </div>
       <div>
         <Navbar />
-        <Confession />
-        {/* <GlobalChat /> */}
+        <Routes>
+          <Route path='/' element={<Confession/>}/>
+          <Route path='/chat' element={<GlobalChat/>}/>
+          <Route path='/notice' element={<Notices/>}/>
+        </Routes>
       </div>
     </div>
   )

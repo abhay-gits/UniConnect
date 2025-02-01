@@ -17,7 +17,7 @@ const Confession = () => {
 
   function sendConfession(){
     let confession = document.getElementById('input').value;
-    if(confession && confession.length > 20){
+    if(confession ){
       axios.post('http://localhost:3000/api/confessions',{ confession })
       .then((res)=>{
         console.log(res)
@@ -31,9 +31,9 @@ const Confession = () => {
   return (
 
     <div className='bg-white w-[97%] m-auto rounded-md mt-5 h-96 overflow-y-scroll overflow-hidden p-4'>   
-        {confession.map((confession)=>(
+        {confession.map((confession,index)=>(
           <div 
-          className='bg-pink-300 max-w-max mb-3 mt-2 px-3 py-1 rounded'
+          className={`max-w-max mb-3 mt-2 px-3 py-1 rounded ${ index % 2 === 0?"bg-pink-200":"bg-purple-200"}`}
           key={confession._id}>
             <p>{confession.confession}</p>
             <p className='text-right text-gray-600 text-sm'>{confession.createdAt.split("T")[0]}</p>
@@ -47,7 +47,7 @@ const Confession = () => {
         onChange={(e)=> setInput(e.target.value)}
         id='input'
         className='outline outline-2 outline-gray-200 w-full h-full rounded-md px-4' />
-        <button className='w-20 rounded-lg bg-blue-500 text-white' 
+        <button className='w-20 rounded-lg bg-purple-500 text-white' 
         onClick={sendConfession}>
           Send
         </button>
