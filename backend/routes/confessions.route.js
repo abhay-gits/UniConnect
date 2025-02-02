@@ -3,9 +3,9 @@ import express from 'express';
 import { getConfessions } from '../controllers/confessions.controller.js';
 import { postConfessions } from '../controllers/confessions.controller.js';
 
-const Router = express.Router();
+const router = express.Router();
 
-Router.get('/',getConfessions);
-Router.post('/',postConfessions);
+router.get('/',getConfessions);
+router.post('/',postConfessions);
 
-export default Router;
+export default router;
