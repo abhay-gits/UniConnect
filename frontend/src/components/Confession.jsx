@@ -30,13 +30,19 @@ const Confession = () => {
 
   return (
 
-    <div className='bg-white w-[94vw] sm:w-[97vw] m-auto rounded-md mt-5 h-[100vh] sm:h-[65vh] overflow-y-scroll overflow-hidden p-4'>
+    <div className='bg-white w-[94vw] sm:w-[97vw] m-auto overflow-y-scroll overflow-hidden p-4 rounded-md mt-5 min-h-[67vh] max-h-[80vh]'>
+
       {confession.map((confession, index) => (
-        <div
-          className={`max-w-max mb-3 mt-2 px-3 py-1 rounded ${index % 2 === 0 ? "bg-pink-200" : "bg-purple-200"}`}
-          key={confession._id}>
-          <p>{confession.confession}</p>
-          <p className='text-right text-gray-600 text-sm'>{confession.createdAt.split("T")[0]}</p>
+
+        <div className="chat chat-start" >
+          <div className="chat-image avatar">
+            <div className="w-10 rounded-full">
+              <img
+                alt="Tailwind CSS chat bubble component"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDwmG52pVI5JZfn04j9gdtsd8pAGbqjjLswg&s" />
+            </div>
+          </div>
+          <div className={`chat-bubble ${index % 2 === 0 ? "chat-bubble-info" : "chat-bubble-primary"}`}>{confession.confession}</div>
         </div>
       )
       )}
@@ -52,7 +58,7 @@ const Confession = () => {
           Send
         </button>
       </div>
-    </div>
+    </div >
   )
 }
 

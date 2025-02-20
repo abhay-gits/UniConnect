@@ -5,6 +5,7 @@ import { getAdminConfessions, postAdminConfessions } from '../controllers/admin.
 const Router = express.Router();
 
 Router.get('/',getAdminConfessions);
-Router.post('/',postAdminConfessions);
+Router.put('/',postAdminConfessions);
+Router.delete('/',postAdminConfessions);
 
 export default Router;

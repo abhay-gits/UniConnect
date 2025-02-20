@@ -29,7 +29,7 @@ const Notices = () => {
     }
     return (
         <div className="grid grid-cols-3 gap-4 p-4 w-[97%] mt-5 m-auto rounded-md bg-white">
-            <div className="col-span-2 bg-green-100 min-h-96 overflow-y-scroll rounded border border-e-green-500">
+            <div className="col-span-3 sm:col-span-2 bg-green-100 min-h-96 overflow-y-scroll rounded border border-e-green-500">
 
                 {notices.map((notice)=>(
                         <div key={notice._id}>
@@ -39,7 +39,7 @@ const Notices = () => {
                     ))}
 
             </div>
-            <div className="col-span-1 bg-green-100 rounded border border-s-green-500">
+            <div className="col-span-3 sm:col-span-1 bg-green-100 rounded border border-s-green-500">
                 <form action="" className='flex flex-col px-2 h-full'>
                     <label htmlFor="title" className='text-gray-600 text-sm my-1'>Title</label>
                     <input type="text" id='title' 

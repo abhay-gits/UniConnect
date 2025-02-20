@@ -1,9 +1,12 @@
 import UserConfession from "../database/models/userConfession.model.js";
-import PublicConfessions from "../database/models/publicConfession.model.js";
+
 export const getConfessions = async (req, res) => {
-  /* const confessions = await PublicConfessions.find(); */
-  const confessions = await UserConfession.find();
-  res.send(confessions);
+  try {
+    const confessions = await UserConfession.find({status:'approved'});
+    res.send(confessions);
+  } catch (error) {
+    console.log("Error in the GET confession controller", error)
+  }
 }
 
 export const postConfessions = async (req, res) => {

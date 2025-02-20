@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use('/api/confessions', confessions)
 app.use('/api/notices', notices)
 //Admin Route
-app.use('/admin',protect, admin)
+app.use('/admin', admin)
 
 /* PORT Listening */
 app.listen(PORT, () => { 
