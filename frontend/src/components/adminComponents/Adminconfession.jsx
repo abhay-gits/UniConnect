@@ -6,7 +6,7 @@ const Adminconfession = () => {
 
     useEffect(() => {
       async function fetchData() {
-        const rawData = await axios.get('http://localhost:3000/admin');
+        const rawData = await axios.get('https://uniconnect-kzn1.onrender.com/admin');
         const data = rawData.data
         setConfessions(data.reverse())
       }
@@ -14,11 +14,11 @@ const Adminconfession = () => {
     }, [])
   
     function approveConfession(id) {
-      axios.put('http://localhost:3000/admin', { id, 'status': "approved" })
+      axios.put('https://uniconnect-kzn1.onrender.com/admin', { id, 'status': "approved" })
       window.location.reload()
     }
     function rejectConfession(id){
-      axios.delete(`http://localhost:3000/admin/${id}`);
+      axios.delete(`https://uniconnect-kzn1.onrender.com/admin/${id}`);
       window.location.reload();
     }
     return (

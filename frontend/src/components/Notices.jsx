@@ -8,7 +8,7 @@ const Notices = () => {
 
     useEffect(() => {
         async function getNotices() {
-            const data = await axios.get('http://localhost:3000/api/notices')
+            const data = await axios.get('https://uniconnect-kzn1.onrender.com/api/notices')
             const notices = data.data
             setNotices(notices.reverse())
         }
@@ -18,12 +18,12 @@ const Notices = () => {
     async function sendNotice(e) {
         e.preventDefault()
         if (body && title) {
-            const res = await axios.post('http://localhost:3000/api/notices', { title, body })
+            const res = await axios.post('https://uniconnect-kzn1.onrender.com/api/notices', { title, body })
             console.log(res);
             setTitle('')
             setBody('')
             // Refresh notices after posting
-            const data = await axios.get('http://localhost:3000/api/notices')
+            const data = await axios.get('https://uniconnect-kzn1.onrender.com/api/notices')
             setNotices(data.data.reverse())
         }
     }

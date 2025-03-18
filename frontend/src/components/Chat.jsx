@@ -15,7 +15,7 @@ const Chat = () => {
 
     useEffect(() => {
         // Connect to the WebSocket server
-        const newSocket = io('http://localhost:3000', {
+        const newSocket = io('https://uniconnect-kzn1.onrender.com', {
             reconnection: true,
             reconnectionAttempts: 5,
             reconnectionDelay: 1000,
@@ -45,7 +45,7 @@ const Chat = () => {
         const fetchMessages = async () => {
             try {
                 setIsLoading(true);
-                const response = await fetch('http://localhost:3000/api/messages');
+                const response = await fetch('https://uniconnect-kzn1.onrender.com/api/messages');
                 if (!response.ok) {
                     throw new Error('Failed to fetch messages');
                 }

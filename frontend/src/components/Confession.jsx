@@ -8,7 +8,7 @@ const Confession = () => {
 
   useEffect(() => {
     async function getConfession() {
-      const data = await axios.get('http://localhost:3000/api/confessions')
+      const data = await axios.get('https://uniconnect-kzn1.onrender.com/api/confessions')
       const confession = data.data;
       setConfession(confession.reverse())
     }
@@ -18,7 +18,7 @@ const Confession = () => {
   function sendConfession() {
     let confession = input
     if (confession && confession.length > 30) {
-      axios.post('http://localhost:3000/api/confessions', { confession })
+      axios.post('https://uniconnect-kzn1.onrender.com/api/confessions', { confession })
         .then((res) => {
           console.log(res)
         })

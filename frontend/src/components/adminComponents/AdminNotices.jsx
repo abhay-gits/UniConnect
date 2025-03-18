@@ -6,18 +6,18 @@ const AdminNotices = () => {
   const [notices, setNotices] = useState([])
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('http://localhost:3000/admin/notice')
+      const response = await axios.get('https://uniconnect-kzn1.onrender.com/admin/notice')
       setNotices(response.data)
     }
     fetchData()
   }, [])
 
   function approveNotice(id) {
-    axios.put('http://localhost:3000/admin/notice', { id, 'status': "approved" })
+    axios.put('https://uniconnect-kzn1.onrender.com/admin/notice', { id, 'status': "approved" })
     window.location.reload()
   }
   function rejectNotice(id){
-    axios.delete(`http://localhost:3000/admin/notice/${id}`);
+    axios.delete(`https://uniconnect-kzn1.onrender.com/admin/notice/${id}`);
     window.location.reload();
   }
   return (
