@@ -7,7 +7,7 @@ import Notices from './components/Notices'
 import Admin from './pages/Admin'
 import Adminconfession from './components/adminComponents/Adminconfession'
 import AdminNotices from './components/adminComponents/AdminNotices'
-
+import Chat from './components/Chat'
 function App() {
   const location = useLocation();
   const pageNames = {
@@ -28,6 +28,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Confession/>}/>
           <Route path='/notice' element={<Notices/>}/>
+          <Route path='/chat' element={<Chat/>}/>
           <Route path='/admin' element={<Admin/>}>
             <Route index element={<Adminconfession/>}/>
             <Route path='notice' element={<AdminNotices/>}/>
