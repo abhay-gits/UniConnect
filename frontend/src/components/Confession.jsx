@@ -17,21 +17,20 @@ const Confession = () => {
 
   function sendConfession() {
     let confession = input
-    if (confession) {
+    if (confession && confession.length > 30) {
       axios.post('http://localhost:3000/api/confessions', { confession })
         .then((res) => {
           console.log(res)
         })
       setInput('')
     } else {
-      alert('Confession should be more than 20 words')
+      alert('Confession should be more than 30 words')
     }
   }
 
   return (
 
-    <div className='bg-white w-[94vw] sm:w-[97vw] m-auto overflow-y-scroll overflow-hidden p-4 rounded-md mt-5 min-h-[67vh] max-h-[80vh]'>
-
+    <div className='bg-white w-[94vw] sm:w-[97vw] m-auto overflow-y-scroll overflow-hidden p-4 rounded-md mt-5 min-h-[67vh] max-h-[67vh]'>
       {confession.map((confession, index) => (
 
         <div className="chat chat-start" >

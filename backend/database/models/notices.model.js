@@ -18,6 +18,6 @@ const noticesSchema = new mongoose.Schema({
     updatedAt: { type: Date, default: Date.now }
 })
 
-const noticeModel = mongoose.model('noticeModel', noticesSchema)
+const NoticeModel = mongoose.model('noticeModel', noticesSchema)
 
-export default noticeModel;
+export default NoticeModel;
