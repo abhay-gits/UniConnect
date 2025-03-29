@@ -145,7 +145,7 @@ const Chat = () => {
                             />
                             <button
                                 type="submit"
-                                className={`px-6 py-2 rounded-md transition-colors duration-200 ${socket
+                                className={`px-2 py-2 rounded-md transition-colors duration-200 ${socket
                                         ? 'bg-green-500 text-white hover:bg-green-600'
                                         : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                                     } focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2`}
