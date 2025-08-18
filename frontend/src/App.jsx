@@ -16,9 +16,9 @@ function App() {
   }
 
   return (
-    <div className='bg-blue-100 h-screen w-screen '>
+    <div className='bg-blue-100 min-h-screen max-h-fit'>
       {!location.pathname.startsWith('/admin') &&
-        <div className='bg-white w-screen h-16 flex items-center px-4 cursor-pointer justify-between'>
+        <div className='bg-white w-full h-16 flex items-center px-4 cursor-pointer justify-between'>
           <div className='text-blue-600 font-bold text-3xl'>UniConnect</div>
           <p className='text-lg font-bold'>
             {pageNames[location.pathname]}
